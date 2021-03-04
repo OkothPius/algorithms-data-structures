@@ -15,7 +15,17 @@ class Fraction:
         new_den = self.den * other_fraction.den
         return Fraction(new_num, new_den)
 
+    def gcd(self, m, n):
+        while m % n != 0:
+            old_m = m
+            old_n = n
 
+            m = old_n
+            n = old_m % old_n
+        return n
+
+    print(gcd(40, 20))
+    
 f1 = Fraction(1, 4)
 f2 = Fraction(1, 2)
 f3 = f1 + f2
